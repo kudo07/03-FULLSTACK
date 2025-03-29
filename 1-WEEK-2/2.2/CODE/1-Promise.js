@@ -8,8 +8,8 @@ function afterDone() {
   console.log('5 seconds have passed');
 }
 
-let p = setTimeoutPromisified(5000).then(afterDone);
-console.log(p);
+// let p = setTimeoutPromisified(5000).then(afterDone);
+// console.log(p);
 
 function waitFor3s(resolve) {
   // resolve==> main
@@ -176,3 +176,73 @@ readFile()
 
 //2iife
 (async () => {})();
+//
+
+function readTheFileOne(sendTheFinalValueHere) {
+  fs.readFile('a.txt', 'utf-8', function (err, data) {
+    sendTheFinalValueHere(data);
+  });
+}
+
+function readFileOne(filename) {
+  return new Promise(readTheFileOne);
+}
+const Promise = readFile();
+function callbackOne(contents) {
+  console.log(contents);
+}
+
+Promise.then(callback);
+// how the data following from sendthefinalvaluehere to the this callback function which is contents
+//  we created the PromiseTwo class which takes fn
+// fn here is readTheFileWith which passed here which takes argument resolve which is a function after resolve we proceed to then function
+// ṇow resolve currently is undefined until then proceed so readthefile executing starting when its inside the PromiseTwo so
+// after exectuting after 3 sec the then function runs which takes the callback and then methods in the promise which make this.resolve=resolve
+// in which resolve is callback assgin value and in then fn(resolve)==> readthefile(callbackkk) which consolesafter 3 sec till sec resolve is undefined
+// after 3 secs resolve get the callback because it asign the resolve
+// here this refers here as the object which is PromiseTwo
+class PromiseTwo {
+  contructor(fn) {
+    this.resolve = null;
+    // fn==>readTheFileWith
+    // with immediate execution of the readTheFileWith
+    function afterDone() {
+      this.resolve();
+    }
+    fn(afterDone);
+    // afterDone is argument which is resolve overe here
+    // after call afterDone call this.resolve()
+    // whent this.resolve() set
+  }
+  //in the then variabel
+  then(callback) {
+    // this inside PromiseTwo refers to the instance of PromiseTwo, not readTheFileWith.
+    this.resolve = callback;
+    // this.color='red'
+    // we store variable name resolve whatever we get callback
+    // in this case callback is functoin
+  }
+}
+
+function readTheFileWith(resolve) {
+  setTimeout(function () {
+    console.log('callback based settimeout completed');
+    resolve();
+  }, 3000);
+}
+
+function setTimeoutPromisifiedWith() {
+  // whenever creating the instance of Promise give me the funtion
+  return new PromiseTwo(readTheFileWith);
+}
+let ourPromise = setTimeoutPromisifiedWith();
+function callbackWith() {
+  console.log('callback has been called');
+}
+ourPromise.then(callbackWith);
+//whenever the async operation succeed 'readTheFIle' whever it called the first argument which is resolve()
+
+//in the fucntion readTheFile the first argument which is sending resolve in the Promise
+// which is afterDone
+// which sets the this.resolve()
+// and resolve stores which is variable has the callback which callback has call
