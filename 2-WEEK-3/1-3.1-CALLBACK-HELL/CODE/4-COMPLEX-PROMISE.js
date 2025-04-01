@@ -12,8 +12,9 @@ class Promise2 {
     this.resolve.push(fn);
   }
 }
+
 function setTimeoutPromisified(duration) {
-  return new Promise2(function (resolve) {
+  return new Promise2((resolve) => {
     console.log(resolve);
     setTimeout(resolve, duration);
   });
@@ -25,4 +26,3 @@ setTimeoutPromisified(1000).then(function () {
     console.log('hello');
   });
 });
-// whenever we define a promise we pass the big function

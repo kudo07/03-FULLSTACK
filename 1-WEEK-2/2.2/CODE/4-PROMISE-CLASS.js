@@ -46,11 +46,14 @@ class PromiseTwo {
 
   then(callback) {
     this.resolve = callback; // Stores callback in resolve
+    // this.resolve=callbackWith
   }
 }
+// resolve is afterDone
 function readTheFileWith(resolve) {
   setTimeout(function () {
     console.log('callback based settimeout completed');
+    // till 3sec resolve is undefiend
     resolve();
   }, 3000);
 }
