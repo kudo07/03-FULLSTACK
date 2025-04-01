@@ -15,6 +15,9 @@ class Promise2 {
 
 function setTimeoutPromisified(duration) {
   return new Promise2((resolve) => {
+    // () => {
+    // this.resolve.forEach((fn) => fn());
+    // }
     console.log(resolve);
     setTimeout(resolve, duration);
   });
