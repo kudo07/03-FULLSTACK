@@ -1,0 +1,73 @@
+.app {
+  display: flex;
+  height: auto;
+  min-height: min-content;
+  justify-content: center;
+  margin: auto;
+  margin: 20px;
+  flex-direction: column;
+  align-items: center;
+}
+.hell {
+  color: rgb(0, 0, 0);
+  width: 30%;
+  background-color: antiquewhite;
+  text-align: center;
+  border-radius: 20px;
+}
+input {
+  background-color: rgb(234, 205, 255);
+  color: black;
+  border: 1px solid black;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 20px;
+}
+input:hover {
+  cursor: pointer;
+  background-color: beige;
+}
+body {
+  text-align: center;
+}
+.add {
+  width: 15%;
+  align-items: center;
+  justify-content: center;
+  color: rgb(0, 0, 0);
+  background-color: rgb(251, 213, 225);
+  padding: 0.5rem;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 10px;
+  margin: 10px;
+}
+.add:hover {
+  border-color: orange;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  border: 2px solid #f97171;
+  border-radius: 10px;
+  margin: 1rem;
+  padding: 20px;
+  font-size: large;
+  font-weight: 900;
+  gap: 10px;
+  color: blueviolet;
+  margin: 5px 0;
+}
+button {
+  background-color: rgb(222, 222, 255);
+  border-radius: 20px;
+  padding: 0.5rem;
+  cursor: pointer;
+}
