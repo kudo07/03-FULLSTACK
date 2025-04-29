@@ -1,0 +1,54 @@
+RELATIONSHIPS AND TRANSACTIONS
+
+relationships let you store data in different tables and relate it with each other
+
+MONGODB:
+
+since mongo is a no sql db you can store any shape of data in it .
+we can store it in an object that has the address detail
+
+SQL: 
+
+since sql can not store object as such we nned to define 2 different tables to sotre thhis data in
+
+using forign key we can quering the data with 2 different tables for ex let user 1
+has 2 we dont need to store the data same user in one table instead using the different table 
+
+
+CREATE TABLE address(
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER NOT NULL,
+    city VARCHAR(100) NOT NULL,
+    country VARCHAR(100) NOT NULL,
+    street VARCHAR(255) NOT NULL,
+    pincode VARCHAR(20),
+    created_at TIMESTAMP WITH TIME ZONE DEFUALT CURRENT_TIMESTAMP,
+    FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE
+
+)
+
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+insert into address(user_id,city,sountry, street, pincode) values (1,'new york','usa' '12321 st','1001')
+
+SELECT city, country, street, pincode
+FROM addresses
+WHERE user_id = 1;
+
+This would require transactions  in SQL to ensure either both the user information and address goes in, or neither does
+SQL Query
+BEGIN; -- Start transaction
+
+INSERT INTO users (username, email, password)
+VALUES ('john_doe', 'john_doe1@example.com', 'securepassword123');
+
+INSERT INTO addresses (user_id, city, country, street, pincode)
+VALUES (currval('users_id_seq'), 'New York', 'USA', '123 Broadway St', '10001');
+
+COMMIT;
