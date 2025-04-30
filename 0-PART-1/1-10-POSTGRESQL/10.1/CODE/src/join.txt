@@ -1,0 +1,20 @@
+fetch a user details and their address 
+
+simple[not rec]
+
+QUERY 1: FETCH USERS DETAILS: 
+
+SELECT id,username, email from users 
+WHERE id=YOUR_USER_ID 
+
+QUERY2: FETCH USER'ADDRESS :
+SELECT city, country,street ,pincode 
+FROM address  
+WHERE user_id=YOUR_USER_ID 
+
+JOINS : 
+
+SELECT u.id,u.username,u.email,a.city,a.country, a.street,a.pincode 
+from users u 
+join address a on u.id=a.user_id 
+where u.id WHERE u.id=YOUR_USER_ID=
