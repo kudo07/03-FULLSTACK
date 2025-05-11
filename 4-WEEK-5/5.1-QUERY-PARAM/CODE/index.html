@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- for html , js -->
+    <!-- same for react in import -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.6/axios.min.js"></script>
+  </head>
+  <body>
+    <div id="posts"></div>
+    <script>
+      //   async function getPosts() {
+      //     try {
+      //       const response = await fetch('https://google.com');
+      //       const data = await response.json();
+      //       document.getElementById('posts').innerHTML = data.body;
+      //     } catch (error) {
+      //       console.log(error);
+      //     }
+      //   }
+      //   getPosts();
+      async function getPosts() {
+        fetch('http://google.com').then((data) => {
+          const data = response.json().then(() => {
+            document.getElementById('posts').innerHTML = data.body;
+          });
+        });
+      }
+      //          useEffect(() => {
+      //   //     fetch('https://api.example.com/data')
+      //   //       .then(res => res.json())
+      //   //       .then(data => setData(data))
+      //   //       .catch(error => console.error(error));
+      //   //   }, []);
+    </script>
+  </body>
+</html>
