@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.6/axios.min.js"></script>
+    <script>
+      async function sendReq() {
+        const a = document.getElementById('a').value;
+        const b = document.getElementById('b').value;
+        const response = await axios.post('http://localhost:3000', {
+          a: a,
+          b: b,
+        });
+        console.log(response.data);
+      }
+      //   server a folder over http
+    </script>
+  </head>
+  <body>
+    <input type="text" id="a" placeholder="first value" />
+    <input type="text" id="b" placeholder="second value" />
+    <button onclick="sendReq()">Find sum</button>
+  </body>
+</html>
