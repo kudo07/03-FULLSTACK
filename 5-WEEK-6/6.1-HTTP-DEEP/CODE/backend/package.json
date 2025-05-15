@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
 <<<<<<< HEAD
+<<<<<<< HEAD
   "dependencies": {
     "accepts": "^2.0.0",
     "body-parser": "^2.2.0",
@@ -79,6 +80,8 @@
   "license": "ISC",
   "description": ""
 =======
+=======
+>>>>>>> 848027e7f505804c11c31e136a7bd40e5c1502cf
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "express": "nodemon index.js"
@@ -90,5 +93,8 @@
   "dependencies": {
     "express": "^5.1.0"
   }
+<<<<<<< HEAD
+>>>>>>> 848027e7f505804c11c31e136a7bd40e5c1502cf
+=======
 >>>>>>> 848027e7f505804c11c31e136a7bd40e5c1502cf
 }
