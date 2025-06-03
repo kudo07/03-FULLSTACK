@@ -9,4 +9,4 @@ const value = {
 // sign and not generate
 const token = jwt.sign(value, 'fewfergfreg');
 console.log(token);
-console.log(token);
+// anyone can see the contnet of the jwt token but verify is only done by the server
