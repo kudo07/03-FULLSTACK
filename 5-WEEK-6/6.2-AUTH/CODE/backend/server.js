@@ -29,7 +29,7 @@ app.post('/signin', (req, res) => {
   if (foundUser) {
     const token = jwt.sign(
       {
-        username: username,
+        username: users[i].username,
       },
       JWT_SECRET
     );
@@ -78,6 +78,8 @@ app.post('/me', auth, (req, res) => {
     });
   }
 });
-
+app.get('/', function (req, res) {
+  res.sendFile(__dirname + '/public/index.html');
+});
 app.listen(3000);
 // middle wares
