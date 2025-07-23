@@ -15,3 +15,8 @@ now we can clone the repo with the ssh
 for exaple there is a private repo i can access through the ssh and now no need to give the password
 
 same thing in the digital ocean
+
+1. ssh keygen
+2. create the file in the digital ocean while creating the droplet so that we can access server or machine
+3. ssh root@ip_address
+4. cat /.ssh/authorized_key
