@@ -1,5 +1,5 @@
 {
-  "name": "CODE",
+  "name": "exalio-ws",
   "private": true,
   "scripts": {
     "build": "turbo run build",
