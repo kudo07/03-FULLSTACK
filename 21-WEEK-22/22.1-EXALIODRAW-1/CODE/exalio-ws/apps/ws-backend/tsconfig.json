@@ -1,0 +1,5 @@
+{
+  "extends": "../../packages/typescript-config/base.json"
+}
+// like the import
+// @repo/typescript-config
