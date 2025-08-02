@@ -1,9 +1,0 @@
-{
-  "extends": "@repo/typescript-config/base.json",
-  "compileroptions": {
-    "rootdir": "./src",
-    "outdir": "./dist"
-  }
-}
-// like the import
-// @repo/typescript-config
