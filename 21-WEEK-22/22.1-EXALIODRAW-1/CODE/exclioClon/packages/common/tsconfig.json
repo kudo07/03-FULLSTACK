@@ -1,0 +1,4 @@
+{
+  "extends": "@repo/typescript-config/base.json"
+}
+// import the common tsconf file structure rather to write common things again and agian
